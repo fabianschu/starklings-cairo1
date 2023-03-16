@@ -4,13 +4,10 @@
 // function.
 // Execute `starklings hint move_semantics4` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
 use array::ArrayTrait;
 use debug::print;
 
 fn main() {
-    let arr0 = ArrayTrait::<felt>::new();
-
     let mut arr1 = fill_arr();
 
     print(clone_array(@arr1));
@@ -22,7 +19,7 @@ fn main() {
 
 // `fill_arr()` no longer takes `arr: Array::<felt>` as argument
 fn fill_arr() -> Array::<felt> {
-    let mut arr = arr;
+    let mut arr = ArrayTrait::<felt>::new();
 
     arr.append(22);
     arr.append(44);
